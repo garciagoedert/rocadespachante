@@ -13,9 +13,34 @@
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
+            /* Creates a container for the pseudo-element */
+            position: relative;
+            /* Ensures content is above the overlay */
+            z-index: 1;
+        }
+        .hero-bg::before {
+            /* Creates the black overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-image: url('/imgs/hero.png');
             background-size: cover;
             background-position: center;
+            /* Adds the black filter with 50% opacity */
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: multiply;
+            /* Places the overlay behind the content */
+            z-index: -1;
+        }
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .hero-bg::before {
+                /* Adjusts background position to the left on mobile */
+                background-position: 25% 50%; /* Shifts image to show the left part */
+            }
         }
         .brand-red {
             color: #E53935;
@@ -71,9 +96,9 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-black/90">
             <nav class="flex flex-col items-center space-y-4 py-4">
                 <a href="./index.html" class="text-brand-red font-semibold transition-colors">Home</a>
-                <a href="./quem-somos.html" class="text-white hover:text-brand-red transition-colors">Quem somos</a>
+                <a href="./quemsomos.html" class="text-white hover:text-brand-red transition-colors">Quem somos</a>
                 <a href="./servicos.html" class="text-white hover:text-brand-red transition-colors">Serviços</a>
-                <a href="./suporte-lojista.html" class="text-white hover:text-brand-red transition-colors">Suporte ao Lojista</a>
+                <a href="./lojista.html" class="text-white hover:text-brand-red transition-colors">Suporte ao Lojista</a>
                 <a href="./faq.html" class="text-white hover:text-brand-red transition-colors">FAQ</a>
                 <a href="./contato.html" class="bg-brand-red text-white px-4 py-2 font-semibold flex items-center space-x-2 hover:bg-red-700 transition-colors">
                     <span>Fale conosco</span>
@@ -134,7 +159,7 @@
                     <div>
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Confiança, transparência e compromisso com você</h2>
                         <p class="text-lg text-gray-600 mb-6">Há mais de 40 anos, somos referência no Estado de Santa Catarina, em regularização veicular e CNH. Nossa missão é descomplicar processos e entregar confiança em cada atendimento.</p>
-                        <a href="./quem-somos.html" class="border border-gray-800 text-gray-800 px-6 py-3 font-semibold hover:bg-gray-800 hover:text-white transition-colors">Conheça nossa história</a>
+                        <a href="./quemsomos.html" class="border border-gray-800 text-gray-800 px-6 py-3 font-semibold hover:bg-gray-800 hover:text-white transition-colors">Conheça nossa história</a>
                     </div>
                 </div>
             </div>
@@ -325,14 +350,14 @@
                     <h4 class="font-bold text-lg mb-4">Empresa</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="./index.html" class="hover:text-white">Home</a></li>
-                        <li><a href="./quem-somos.html" class="hover:text-white">Quem somos</a></li>
+                        <li><a href="./quemsomos.html" class="hover:text-white">Quem somos</a></li>
                         <li><a href="./contato.html" class="hover:text-white">Contato e Compliance</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-4">Serviços</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="./suporte-lojista.html" class="hover:text-white">Suporte ao lojista</a></li>
+                        <li><a href="./lojista.html" class="hover:text-white">Suporte ao lojista</a></li>
                         <li><a href="./faq.html" class="hover:text-white">Perguntas Frequentes</a></li>
                     </ul>
                 </div>
