@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas Frequentes - ROCA Despachante</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .brand-red {
+            color: #E53935;
+        }
+        .bg-brand-red {
+            background-color: #E53935;
+        }
+        .border-brand-red {
+            border-color: #E53935;
+        }
+        /* Style for the active menu item */
+        .nav-active {
+            color: #E53935;
+        }
+        .faq-item .answer {
+            display: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .faq-item.open .answer {
+            display: block;
+        }
+        .faq-item .icon-minus {
+            display: none;
+        }
+        .faq-item.open .icon-minus {
+            display: inline-block;
+        }
+        .faq-item.open .icon-plus {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <header class="bg-black/80 backdrop-blur-sm sticky top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="./index.html"> <!-- Assuming index.html is the home page -->
+                    <img src="https://placehold.co/120x40/ffffff/1a1a1a?text=ROCA" alt="ROCA Despachante Logo" class="h-8 md:h-10">
+                </a>
+                 <nav class="hidden lg:flex items-center space-x-6">
+                    <a href="/index.html" class="text-white hover:text-brand-red transition-colors">Home</a>
+                    <a href="/quemsomos.html" class="text-white hover:text-brand-red transition-colors">Quem somos</a>
+                    <a href="/servicos.html" class="text-white hover:text-brand-red transition-colors">Serviços</a>
+                    <a href="/lojista.html" class="text-white hover:text-brand-red transition-colors">Suporte ao Lojista</a>
+                    <a href="/faq.html" class="text-white hover:text-brand-red transition-colors">FAQ</a>
+                    <a href="/contato.html" class="bg-brand-red text-white px-4 py-2 font-semibold flex items-center space-x-2 hover:bg-red-700 transition-colors">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg> -->
+                        <span>Fale conosco</span>
+                    </a>
+                </nav>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-white">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-black/90">
+            <nav class="flex flex-col items-center space-y-4 py-4">
+                <a href="./index.html" class="text-white hover:text-brand-red transition-colors">Home</a>
+                <a href="./quem-somos.html" class="text-white hover:text-brand-red transition-colors">Quem somos</a>
+                <a href="./servicos.html" class="text-white hover:text-brand-red transition-colors">Serviços</a>
+                <a href="./suporte-lojista.html" class="text-white hover:text-brand-red transition-colors">Suporte ao Lojista</a>
+                <a href="#" class="nav-active font-semibold transition-colors">FAQ</a>
+                <a href="#" class="bg-brand-red text-white px-4 py-2 font-semibold flex items-center space-x-2 hover:bg-red-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Fale conosco</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight">Dúvidas frequentes</h1>
+                        <p class="mt-4 text-lg md:text-xl text-gray-600">Aqui você encontra respostas para as perguntas mais comuns sobre nossos serviços e processos.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/cccccc/333333?text=Atendimento+ROCA" alt="Atendimento ROCA" class="shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-8">Serviços veiculares</h2>
+                        <div class="space-y-4 faq-group">
+                            <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Quanto tempo leva para transferir um veículo?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>O prazo médio é de 5 a 7 dias úteis, dependendo da situação documental e da agilidade dos órgãos competentes.</p>
+                                </div>
+                            </div>
+                             <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Posso resolver tudo online?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>Sim, grande parte dos nossos serviços pode ser iniciada e acompanhada de forma online para sua comodidade. Alguns processos podem exigir comparecimento para assinatura ou vistoria.</p>
+                                </div>
+                            </div>
+                             <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Atendem outras cidades?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>Atendemos principalmente em Florianópolis e região. Entre em contato para verificar a disponibilidade e condições para sua cidade.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="text-3xl font-bold mb-8 mt-12">Lojistas</h2>
+                        <div class="space-y-4 faq-group">
+                            <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Como funciona o suporte ao lojista?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>Oferecemos um despachante exclusivo, comunicação direta via WhatsApp e acompanhamento em tempo real para agilizar os processos da sua loja.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Há algum custo fixo para lojistas?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>Não, nosso modelo para lojistas é flexível. Você paga apenas pelos serviços que utilizar, sem taxas de manutenção ou mensalidades.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-8">Documentação e 2ª via</h2>
+                        <div class="space-y-4 faq-group">
+                             <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>É possível solicitar serviços sem ir até o despachante?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>Sim, muitos dos nossos serviços podem ser iniciados e concluídos remotamente. Entre em contato para saber mais sobre o seu caso específico.</p>
+                                </div>
+                            </div>
+                             <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Perdi o documento do carro. E agora?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>Não se preocupe. Nós cuidamos de todo o processo para a emissão da segunda via do seu CRV/CRLV de forma rápida e segura.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="text-3xl font-bold mb-8 mt-12">Atendimento</h2>
+                        <div class="space-y-4 faq-group">
+                             <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Qual o horário de atendimento?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>Nosso horário de atendimento presencial é de segunda a sexta, das 8h às 18h. O atendimento online via WhatsApp pode ter horários estendidos.</p>
+                                </div>
+                            </div>
+                             <!-- FAQ Item -->
+                            <div class="faq-item bg-white p-6 shadow-sm">
+                                <button class="question w-full flex justify-between items-center text-left text-lg font-semibold">
+                                    <span>Como funciona o canal de compliance?</span>
+                                    <svg class="w-6 h-6 text-red-500 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                    <svg class="w-6 h-6 text-red-500 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                </button>
+                                <div class="answer mt-4 text-gray-600">
+                                    <p>O canal de compliance é um meio seguro e confidencial para relatar qualquer irregularidade ou conduta inadequada, garantindo a transparência e a ética em nossos serviços.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                     <a href="#">
+                        <img src="https://placehold.co/120x40/ffffff/1a1a1a?text=ROCA" alt="ROCA Despachante Logo" class="h-10">
+                    </a>
+                    <div class="mt-4 space-y-2 text-gray-400">
+                        <p>contato@despachanteoliveira.com.br</p>
+                        <p>(00) 0000-0000</p>
+                        <p>(00) 00000-0000</p>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465 2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd" /></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Empresa</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Quem somos</a></li>
+                        <li><a href="#" class="hover:text-white">Contato e Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Suporte ao lojista</a></li>
+                        <li><a href="#" class="hover:text-white">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© 2023 ROCA DESPACHANTE</p>
+                <a href="#" class="mt-4 md:mt-0 hover:text-white">Voltar ao topo ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-group').forEach(group => {
+            const faqItems = group.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.question');
+                question.addEventListener('click', () => {
+                    // Close other items in the same group
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('open');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
