@@ -1,1 +1,16 @@
-# rocadespachante
+Projeto Website ROCA DespachanteEste repositório contém os arquivos para o website institucional da ROCA Despachante, desenvolvido com base nos designs fornecidos. O site é totalmente responsivo e construído com HTML e Tailwind CSS.Estrutura do ProjetoO projeto está organizado da seguinte forma:/
+|-- index.html             # Página Inicial (Home)
+|-- quem-somos.html        # Página "Quem Somos"
+|-- servicos.html          # Página de "Serviços"
+|-- suporte-lojista.html   # Página de "Suporte ao Lojista"
+|-- faq.html               # Página de "Perguntas Frequentes" (FAQ)
+|-- contato.html           # Página de "Contato"
+|-- README.md              # Este arquivo
+Páginas Criadasindex.html: A página principal do site. Apresenta uma visão geral dos serviços e diferenciais da empresa.quem-somos.html: Descreve a história, a missão e a equipe da ROCA Despachante.servicos.html: Detalha todos os serviços oferecidos pela empresa, desde transferência de veículos até emissão de certificados digitais.suporte-lojista.html: Página dedicada aos parceiros (lojas e concessionárias), destacando os benefícios e as soluções exclusivas.faq.html: Uma seção de Perguntas Frequentes para responder às dúvidas mais comuns dos clientes e parceiros.contato.html: Contém as informações de contato, um formulário e o mapa de localização.Tecnologias UtilizadasHTML5: Para a estruturação do conteúdo das páginas.Tailwind CSS: Um framework CSS "utility-first" para a estilização rápida e responsiva. O Tailwind é carregado via CDN, não necessitando de um processo de compilação.JavaScript: Utilizado para interatividades, como o menu móvel e o acordeão da página de FAQ.Como Visualizar o SiteComo o projeto utiliza apenas HTML, CSS e JavaScript do lado do cliente, não há necessidade de um servidor complexo. Para visualizar as páginas:Clone ou baixe este repositório para o seu computador.Navegue até a pasta do projeto.Abra qualquer um dos arquivos .html (por exemplo, index.html) diretamente no seu navegador de preferência (Google Chrome, Firefox, etc.).Como Personalizar1. Alterar Logos e ImagensTodas as imagens e logos são carregadas a partir de URLs de placeholder (https://placehold.co/...). Para usar suas próprias imagens:Substitua os URLs nos atributos src das tags <img> pelo caminho para as suas imagens locais (ex: src="./assets/minha-imagem.jpg") ou por um novo URL.Exemplo:<!-- Original -->
+<img src="https://placehold.co/120x40/ffffff/1a1a1a?text=ROCA" alt="ROCA Despachante Logo">
+
+<!-- Alterado -->
+<img src="caminho/para/sua/logo.svg" alt="ROCA Despachante Logo">
+2. Alterar Textos e LinksTodo o conteúdo de texto pode ser editado diretamente nos arquivos .html. Os links de navegação no cabeçalho e rodapé também devem ser atualizados para apontar para os arquivos corretos.Exemplo de link de navegação:<!-- No arquivo index.html, o link para "Quem Somos" deve ser: -->
+<a href="./quem-somos.html" class="text-white hover:text-brand-red transition-colors">Quem somos</a>
+3. Estilos e CoresAs cores principais, fontes e outros estilos são definidos com as classes do Tailwind CSS. A cor vermelha principal da marca (#E53935) está definida no <style> de cada página para fácil referência, mas é aplicada através das classes do Tailwind como bg-brand-red e text-brand-red.
